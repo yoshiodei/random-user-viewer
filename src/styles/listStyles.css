@@ -1,0 +1,93 @@
+.filter-form {
+    margin-bottom: 20px;
+}
+
+.filter-form select {
+    padding: 12px;
+    margin: 0 20px;
+    width: 100%;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+.main-section {
+    width: 100%;
+    height: auto;
+}
+
+.user-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-list__item {
+    width: 300px;
+    min-height: 250px;
+    border-radius: 4px;
+    background-color: rgb(154, 154, 154);
+    color: white;
+    padding: 12px;
+    margin: 0 20px;
+    margin-bottom: 15px;
+}
+
+.user-list__item a{
+    padding: 1px 3px;
+    text-decoration: none;
+    border-radius: 3px;
+    background-color: brown;
+    color: white;
+}
+
+.error {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgb(154, 154, 154);
+    color: white;
+}
+
+.error h1{
+    margin-bottom: 15px;
+}
+
+.error button {
+    background-color: rgb(75, 36, 195);
+    border-radius: 4px;
+    color: white;
+    border: none;
+}
+
+.spinner-div {
+    height: 40vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:5px solid rgb(225, 225, 225);
+    border-top: 5px solid rgb(75, 36, 195);
+    animation: spinner 0.75s infinite linear;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.empty-list{
+    width: 100%;
+    height: 35vh;
+    display: grid;
+    place-content: center;
+    color: dimgrey;
+}
