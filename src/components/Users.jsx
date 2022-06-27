@@ -21,10 +21,10 @@ const Users = ({data}) => {
                         <h3>E-mail:</h3>
                         <p>{`${user.email}`}</p>
                     </div>
-                    <div className='user-list__item-div'>
+                    {user.location.cordinates  && <div className='user-list__item-div'>
                         <h3>Find On Map:</h3>
                         <a href={`https://www.openstreetmap.org/#map=${user.location?.cordinates?.latitude}/${user.location?.cordinates?.longitude}`} target='_blank' >Locate</a>
-                    </div>
+                    </div>}
                 </div>
              ))
             }
