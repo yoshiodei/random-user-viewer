@@ -49,6 +49,7 @@
     border-radius: 8px;
     background-color: rgb(154, 154, 154);
     color: white;
+    margin:0 20px;
 }
 
 .error h1{
@@ -58,6 +59,7 @@
 .error button {
     background-color: rgb(75, 36, 195);
     border-radius: 4px;
+    padding: 5px 10px;
     color: white;
     border: none;
 }

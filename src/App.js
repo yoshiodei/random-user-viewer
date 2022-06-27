@@ -60,7 +60,7 @@ function App() {
         { error && <Error /> } 
         { (filteredData.length === 0 && data.length !== 0) && <Users data={data} /> }
         { (filteredData.length !== 0) && <Users data={filteredData} /> }
-        { (filteredData.length === 0 && data.length === 0 && !loading) && <EmptyList /> }
+        { (filteredData.length === 0 && data.length === 0 && !loading && !error) && <EmptyList /> }
       </section>
     </main>
   );
