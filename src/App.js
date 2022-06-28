@@ -11,6 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
+  const [initialData, setInitialData] = useState([]);
 
 
 // fetch data on page load
@@ -19,6 +20,7 @@ function App() {
     .then((res) => {
         if(!res.ok){
           setLoading(false);
+          setInitialData([]);
           setData([]);
           setError(true)
           throw Error('Could not fetch data!');
@@ -26,11 +28,13 @@ function App() {
         return res.json();
     })
     .then((data) => {
+      setInitialData(data.results);
       setData(data.results);
       setLoading(false);
       setError(false);
     })
     .catch(() => {
+      setInitialData([]);
       setData([]);
       setLoading(false);
       setError(true);
@@ -42,11 +46,12 @@ function App() {
 
   const switchCountry = (country) => {
     if(country){
-      let filteredList = data.filter(user => user.location.country === country);
+      let filteredList = initialData.filter(user => user.location.country === country);
       setFilteredData(filteredList);
       setData([]);
     }
     else {
+      setData(initialData);
       setFilteredData([]);
     }
   
@@ -58,7 +63,7 @@ function App() {
       <section className='main-section'>
         { loading && <LoadingSpinner /> }
         { error && <Error /> } 
-        { (filteredData.length === 0 && data.length !== 0) && <Users data={data} /> }
+        { (filteredData.length === 0 && data.length !== 0) && <Users data={initialData} /> }
         { (filteredData.length !== 0) && <Users data={filteredData} /> }
         { (filteredData.length === 0 && data.length === 0 && !loading && !error) && <EmptyList /> }
       </section>
