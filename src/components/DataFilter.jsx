@@ -1,6 +1,4 @@
-import React from 'react';
-
-const DataFilter = ({ switchCountry }) => {
+const DataFilter = ({ setCountry }) => {
 
     const userNationality = [
         {country: 'United States', abbreviation: 'us'},
@@ -23,7 +21,7 @@ const DataFilter = ({ switchCountry }) => {
     ];
 
     const handleCountrySwitch = (e) =>{
-        switchCountry(e.target.value);
+        setCountry(e.target.value);
     }
 
     return (
